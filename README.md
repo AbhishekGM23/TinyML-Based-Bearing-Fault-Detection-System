@@ -13,7 +13,7 @@ This directory contains all the source code required to build the project.
 - **`/bearing_fault1`**
   - `bearing_fault1.ino`: This is the **main application firmware**. It runs the trained Edge Impulse machine learning model locally on the ESP32-S3. It reads real-time data from the accelerometer, runs inferences to classify the current state, and changes the color of the NeoPixel RGB LED according to the result:
     - **Blue**: `off` state
-    - **Green**: `normal` state (Note: in code Red/Green assignment might differ, please verify wiring)
+    - **Green**: `normal` state
     - **Red**: `fault` state
 
 - **`ei-bearing_fault1-arduino-1.0.2-impulse-#1.zip`**
@@ -24,9 +24,8 @@ Contains diagrams and images showcasing the system, including block diagrams, ha
 
 ## Hardware Requirements
 
-- **ESP32-S3-Zero** (or similar ESP32 development board)
+- **ESP32-S3-Zero**
 - **ADXL345 Accelerometer Module**
-- **NeoPixel RGB LED** (WS2812B or compatible)
 - Jumper wires and breadboard
 - DC Motor / Bearing setup (for actual testing)
 
@@ -38,9 +37,9 @@ Contains diagrams and images showcasing the system, including block diagrams, ha
 | ADXL345 | GND | GND |
 | ADXL345 | SDA | GPIO 8 |
 | ADXL345 | SCL | GPIO 9 |
-| NeoPixel | Data In (DIN) | GPIO 21 |
-| NeoPixel | VCC | 5V / 3.3V (Check spec) |
-| NeoPixel | GND | GND |
+| ESP32-S3-Zero | Data In (DIN) | GPIO 21 |
+| ESP32-S3-Zero | VCC | 3.3V |
+| ESP32-S3-Zero | GND | GND |
 
 ## Step-by-Step Instructions to Build from Scratch
 
